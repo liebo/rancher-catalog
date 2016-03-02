@@ -12,12 +12,12 @@ convoy-gluster:
     - /etc/docker/plugins:/etc/docker/plugins
   external_links:
     - "${GLUSTERFS_SERVICE}:glusterfs"
-  image: rancher/convoy-agent:v0.1.2
+  image: docker.gf.com.cn/gfcloud/rancher-convoy-agent:v0.1.2
   command: volume-agent-glusterfs
 
 convoy-gluster-storagepool:
   labels:
     io.rancher.container.create_agent: 'true'
     io.rancher.scheduler.affinity:host_label_soft: ${HOST_LABEL}
-  image: rancher/convoy-agent:v0.1.2
+  image: docker.gf.com.cn/gfcloud/rancher-convoy-agent:v0.1.2
   command: storagepool-agent
